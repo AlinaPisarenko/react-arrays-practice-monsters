@@ -1,3 +1,6 @@
+//Fake database
+
+//array that has all the characters
 const characters = [
     { id: 1, name: "James P. Sullivan", image: "https://static.wikia.nocookie.net/pixar/images/0/04/Sully_Monsters_University.jpg", isGood: true },
     { id: 2, name: "Mike Wazowski", image: "https://static.wikia.nocookie.net/disney/images/9/9e/Mike_KHIII.png", isGood: true },
@@ -12,7 +15,7 @@ const characters = [
     { name: "Henry J. Waternoose III", image: "https://static.wikia.nocookie.net/villains/images/c/c4/Mr_Waternoose.png", idGood: false },
   ];
   
-  // Get one random monster
+  // Function that returns one random monster from the newCharacters array
   function getNewRandomCharacter() {
     const index = Math.floor(Math.random() * newCharacters.length);
     const newCharacter = { ...newCharacters[index] };
