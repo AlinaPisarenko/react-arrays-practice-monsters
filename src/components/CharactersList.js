@@ -1,17 +1,21 @@
-import {useState} from 'react'
-//importing data from our fake DB
-import { characters, getNewRandomCharacter } from "../data";
+import {useState, useEffect} from 'react'
 import CharacterCard from './CharacterCard';
+import NewCharacterForm from './NewCharacterForm';
 
 
 export default function CharactersList() {
 //setting initial state to the array from our fake DB
-const [allCharacters, setAllCharacters] = useState(characters)
+const [allCharacters, setAllCharacters] = useState([])
+
+useEffect(() => {
+    fetch('http://localhost:3000/characters')
+    .then(res => res.json())
+    .then(data => setAllCharacters(data))
+}, [])
 
 
 //function that runs onClick to add a new character
-function handleAddCharacter() {
-    const newCharacter = getNewRandomCharacter()
+function handleAddCharacter({newCharacter}) {
 //using spread operator to update te state with a copy of allCharacters array and add a new object to that copy
     setAllCharacters([...allCharacters, newCharacter])
 }
@@ -50,7 +54,8 @@ setAllCharacters(newArray)
 
   return (
     <div>
-    <button onClick={handleAddCharacter}>Add new character</button>
+        <NewCharacterForm handleAddCharacter={handleAddCharacter}/>
+
     <div className='CharactersList'>
         {/* 
         Calling .map() on alCharacters array and returning a new CharacterCard component for each object in that array. 
