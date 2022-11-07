@@ -7,6 +7,7 @@ background-color: #002949;
 
 font-family: 'Russo One', sans-serif;
 text-align: center;
+
 }
 
 .CharactersList {
@@ -17,6 +18,7 @@ text-align: center;
   gap: 4rem;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 
 .CharacterCard {
@@ -68,4 +70,23 @@ button:hover {
 .logo {
   margin: 2rem 0;
   width: 50vw;
+}
+
+input {
+
+  padding: 12px;
+  background-color: #127ac988;
+  color: rgb(240, 248, 255);
+  font-family: 'Russo One', sans-serif;
+  font-size: 1.2rem;
+  border-radius: 24px;
+  border: none;
+}
+
+#new-form {
+width: 50%;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 1rem;
 }
