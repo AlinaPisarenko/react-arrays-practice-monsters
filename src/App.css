@@ -4,13 +4,12 @@ background-color: #002949;
 }
 
 .App {
-  color: rgb(240, 248, 255);
+color: rgb(240, 248, 255);
 font-family: 'Russo One', sans-serif;
 text-align: center;
 }
 
 .CharactersList {
-
   margin: 0 10vw;
   padding: 4rem 0;
   display: flex;
