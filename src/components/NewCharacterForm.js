@@ -16,14 +16,12 @@ function handleSubmit(e) {
   }
 
 handleAddCharacter(newObject)
-
 }
-
-
-
 
   return (
     <div>
+
+<label htmlFor="new-form">Add your own character:</label> 
 <form onSubmit={handleSubmit}  id='new-form'>
 <input
         type="text"
@@ -40,12 +38,12 @@ handleAddCharacter(newObject)
       />
 
 <select onChange={(e) => setIsGood(e.target.value)} value={isGood}>
-<option >Good/Bad</option>
+<option value='' disabled selected hidden >Good/Bad</option>
   <option value={true}>Good 😇</option>
   <option value={false}>Bad 😈</option>
 </select>
 
-<button>Add new character</button>
+<button>Add</button>
 </form>
     </div>
   )
